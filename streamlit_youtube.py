@@ -142,7 +142,7 @@ def get_video_details(video_ids, playlist_id):
                 dislike_count = res['items'][i]['statistics'].get('dislikeCount', 0),
                 favorite_count = res['items'][i]['statistics']['favoriteCount'],
                 comment_count = res['items'][i]['statistics']['commentCount'],
-                duration = isodate.parse_duration(res['items'][i]['contentDetails']['duration']).total_seconds(),
+                duration = .parse_duration(res['items'][i]['contentDetails']['duration']).total_seconds(),
                 thumbnail = res['items'][i]['snippet']['thumbnails']['high']['url'],
                 caption_status = res['items'][i]['contentDetails']['caption'],
             )
@@ -233,7 +233,7 @@ if selected == "Home":
 # EXTRACT and TRANSFORM PAGE
 if selected == "Collect and Migrate to MySQL":
 
-    channel_id = st.text_input("Youtube Channel Id").split(',')
+    channel_id = st.text_input("Youtube Channel 
 
     if channel_id and st.button("Extract Data"):
         ch_details = get_channel_details(channel_id[0])
